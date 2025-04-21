@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.Tech Project Ideas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-10 text-blue-700">B.Tech Project Ideas</h1>
+
+    <div id="projectsContainer" class="space-y-12"></div>
+  </div>
+
+  <script>
+    const projectData = {
+      "IoT": {
+        "II B.Tech": [...Array(50).keys()].map(i => `IoT Project ${i + 1} - II B.Tech`),
+        "III B.Tech": [...Array(50).keys()].map(i => `IoT Project ${i + 1} - III B.Tech`),
+      },
+      "AI": {
+        "II B.Tech": [...Array(50).keys()].map(i => `AI Project ${i + 1} - II B.Tech`),
+        "III B.Tech": [...Array(50).keys()].map(i => `AI Project ${i + 1} - III B.Tech`),
+      },
+      "Full Stack": {
+        "II B.Tech": [...Array(50).keys()].map(i => `Full Stack Project ${i + 1} - II B.Tech`),
+        "III B.Tech": [...Array(50).keys()].map(i => `Full Stack Project ${i + 1} - III B.Tech`),
+      },
+      "Blockchain": {
+        "II B.Tech": [...Array(50).keys()].map(i => `Blockchain Project ${i + 1} - II B.Tech`),
+        "III B.Tech": [...Array(50).keys()].map(i => `Blockchain Project ${i + 1} - III B.Tech`),
+      },
+      "Cloud Solutions": {
+        "II B.Tech": [...Array(50).keys()].map(i => `Cloud Project ${i + 1} - II B.Tech`),
+        "III B.Tech": [...Array(50).keys()].map(i => `Cloud Project ${i + 1} - III B.Tech`),
+      }
+    };
+
+    const container = document.getElementById('projectsContainer');
+
+    for (const domain in projectData) {
+      const domainSection = document.createElement('div');
+      domainSection.innerHTML = `
+        <h2 class="text-2xl font-semibold text-blue-600">${domain}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          ${Object.entries(projectData[domain]).map(([year, projects]) => `
+            <div class="bg-white p-4 rounded-xl shadow fade-in">
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">${year}</h3>
+              <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
+                ${projects.map(p => `<li>${p}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      container.appendChild(domainSection);
+    }
+  </script>
+</body>
+
+</html>
