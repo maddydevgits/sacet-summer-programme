@@ -234,10 +234,63 @@
     .home-float i {
       font-size: 32px;
     }
+
+    .mobile-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-around;
+      padding: 12px;
+      z-index: 1000;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    .mobile-nav i {
+      font-size: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-nav {
+        display: none;
+      }
+      .whatsapp-float, .home-float {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .whatsapp-float, .home-float {
+        display: none;
+      }
+      .mobile-nav {
+        display: flex;
+      }
+    }
   </style>
 </head>
 
 <body class="p-6">
+  <!-- Desktop floating icons -->
   <a href="https://makeskilled.com" target="_blank" class="home-float">
     <i class="fas fa-home"></i>
   </a>
@@ -245,6 +298,18 @@
   <a href="https://wa.me/917893015625" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Mobile bottom navigation -->
+  <div class="mobile-nav">
+    <a href="https://makeskilled.com" target="_blank">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="https://wa.me/917893015625" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+  </div>
 
   <div class="container mx-auto max-w-6xl">
     <div class="logo-container">
