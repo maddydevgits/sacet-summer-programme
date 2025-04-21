@@ -4,13 +4,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B.Tech Project Ideas</title>
+  <title> Summer Innovation Program Ideas</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      color: #f8fafc;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .selection-button {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 1.5rem 3rem;
+      border-radius: 20px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .selection-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .selection-button:hover::before {
+      left: 100%;
+    }
+
+    .selection-button:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .domain-button {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.2rem 2.5rem;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      color: #f8fafc;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .domain-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-item {
+      transition: all 0.3s ease;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 4px 0;
+    }
+
+    .project-item:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(5px);
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
+      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
     @keyframes fadeInUp {
@@ -19,58 +113,767 @@
         transform: translateY(0);
       }
     }
+
+    .back-button {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      color: #f8fafc;
+    }
+
+    .back-button:hover {
+      background: rgba(59, 130, 246, 0.2);
+      transform: translateX(-3px);
+    }
+
+    .title-glow {
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+
+    .section-title {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      border-radius: 2px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .logo {
+      height: 80px;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-float i {
+      font-size: 32px;
+    }
+
+    .home-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .home-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .home-float i {
+      font-size: 32px;
+    }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-  <div class="container mx-auto p-6">
-    <h1 class="text-4xl font-bold text-center mb-10 text-blue-700">B.Tech Project Ideas</h1>
+<body class="p-6">
+  <a href="https://makeskilled.com" target="_blank" class="home-float">
+    <i class="fas fa-home"></i>
+  </a>
 
-    <div id="projectsContainer" class="space-y-12"></div>
+  <a href="https://wa.me/917893015625" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <div class="container mx-auto max-w-6xl">
+    <div class="logo-container">
+      <img src="https://myhr.makeskilled.com/static/images/logoms1.png" alt="Make Skilled Logo" class="logo">
+    </div> <br/><br/>
+    <h1 class="text-5xl font-bold text-center mb-12 text-white title-glow">Summer Innovation Program (SIP) Ideas</h1>
+
+    <div id="yearSelection" class="flex flex-col items-center justify-center min-h-[60vh] space-y-8">
+      <h2 class="text-3xl font-semibold text-white mb-8 section-title">Select Your Year</h2>
+      <div class="flex flex-col md:flex-row gap-6">
+        <button onclick="selectYear('II B.Tech')" class="selection-button">II Year</button>
+        <button onclick="selectYear('III B.Tech')" class="selection-button">III Year</button>
+      </div>
+    </div>
+
+    <div id="domainSelection" class="hidden flex-col items-center justify-center min-h-[60vh] space-y-8">
+      <div class="flex items-center gap-4 mb-8">
+        <button onclick="goBackToYearSelection()" class="back-button">
+          ← Back
+        </button>
+        <h2 class="text-3xl font-semibold text-white section-title">Select Your Domain</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <button onclick="selectDomain('IoT')" class="domain-button">IoT</button>
+        <button onclick="selectDomain('AI')" class="domain-button">AI</button>
+        <button onclick="selectDomain('Full Stack')" class="domain-button">Full Stack</button>
+        <button onclick="selectDomain('Blockchain')" class="domain-button">Blockchain</button>
+        <button onclick="selectDomain('Cloud Solutions')" class="domain-button">Cloud Solutions</button>
+      </div>
+    </div>
+
+    <div id="projectsContainer" class="hidden space-y-16">
+      <div class="flex items-center gap-4 mb-8">
+        <button onclick="goBackToDomainSelection()" class="back-button">
+          ← Back
+        </button>
+        <h2 id="selectedDomainTitle" class="text-3xl font-bold text-white section-title"></h2>
+      </div>
+    </div>
   </div>
 
   <script>
     const projectData = {
       "IoT": {
-        "II B.Tech": [...Array(50).keys()].map(i => `IoT Project ${i + 1} - II B.Tech`),
-        "III B.Tech": [...Array(50).keys()].map(i => `IoT Project ${i + 1} - III B.Tech`),
+        "II B.Tech": [
+          "Smart Plant Watering System",
+          "IoT-based Room Temperature Logger",
+          "Smart Door Lock using RFID and ESP32",
+          "Wi-Fi Controlled Light Bulb",
+          "Motion-Activated Smart Light",
+          "Smart Waste Bin Notifier",
+          "Digital Rain Alert System",
+          "Air Pollution Monitor with Alert System",
+          "Smart Gas Leakage Detector",
+          "Ultrasonic Distance Meter with LCD",
+          "Smart School Bell Automation",
+          "IoT Notice Board using ESP32",
+          "Automatic Pet Feeder",
+          "Smart Fire Alarm System",
+          "Smart Attendance System with IR Sensor",
+          "Real-time Weather Monitoring System",
+          "LPG Leakage Detector with Buzzer Alert",
+          "Smart Helmet for Safety Monitoring",
+          "Contactless Digital Thermometer",
+          "Intruder Alert System with Buzzer",
+          "Smart Dustbin with Lid Automation",
+          "IoT Parking Slot Indicator",
+          "Smart Fan Controlled by Mobile",
+          "Smart Fridge Temperature Monitor",
+          "Soil Moisture-Based Irrigation System",
+          "Smart Curtain Opener",
+          "Real-Time Humidity Logger",
+          "Smart Classroom Lighting Control",
+          "Smart Hand Sanitizer Dispenser",
+          "Garage Door Controller",
+          "Smart Torch Auto Switch",
+          "Smart Shopping Cart Tracker",
+          "IoT Fire Sprinkler System",
+          "Power Consumption Logger",
+          "IoT Smart Wallet Notifier",
+          "Smart School ID Card Tracker",
+          "IoT-based Bicycle Anti-Theft System",
+          "Smart TV Remote using Voice",
+          "Smart Office Desk Monitor",
+          "Water Level Monitoring System",
+          "Smart Water Purifier Alert System",
+          "IoT Medicine Reminder Box",
+          "Contactless Doorbell",
+          "IoT Stethoscope for Basic Health Monitoring",
+          "Smart Switch Board",
+          "Noise Level Monitor",
+          "Smart Library Book Slot Tracker",
+          "IoT Luggage Tracker",
+          "Smart Whiteboard Eraser",
+          "IoT Mini Home Automation Kit (3-in-1)"
+        ],
+        "III B.Tech": [
+          "Smart Agriculture System with Cloud Dashboard",
+          "Industrial Machine Health Monitoring using IoT",
+          "Real-Time Traffic Density Monitor with Adaptive Lights",
+          "Smart Garbage Collection System with GPS",
+          "IoT-based Cold Storage Monitoring System",
+          "Vehicle Accident Detection with Location Alert",
+          "Smart Home Automation using Google Assistant + ESP32",
+          "Energy Consumption Analyzer with Alerts",
+          "IoT-based Flood Detection System",
+          "Fire Detection & Response System with IoT App",
+          "Real-Time Baby Monitoring System",
+          "Smart Irrigation System with Weather API",
+          "IoT-based Office Occupancy Monitor",
+          "Elderly Fall Detection System with Emergency Call",
+          "Smart City Parking System (with slot booking)",
+          "IoT-enabled Air Purification System",
+          "Vehicle Tracking and Theft Prevention System",
+          "Smart Traffic Signal Controller using IR Sensors",
+          "Smart Voting System using RFID and Cloud",
+          "IoT-based Water Distribution System",
+          "Firefighter Tracker with Sensors and GPS",
+          "Real-Time School Bus Tracker for Parents",
+          "IoT-based ATM Security System",
+          "Smart Toll Collection with Vehicle ID",
+          "Smart Poultry Farm Monitor (temp, humidity, light)",
+          "Solar Panel Tracker using IoT",
+          "Smart Energy Meter with Prepaid Recharge",
+          "Water Quality Monitoring (pH, TDS, turbidity)",
+          "IoT-based Smart Aquarium Controller",
+          "Real-Time Construction Site Monitor (Dust, Vibration)",
+          "Smart Fridge with Inventory Management",
+          "IoT Locker with OTP-based Access",
+          "College Attendance + Notification System",
+          "Smart Cane for Visually Impaired",
+          "IoT-based Noise Pollution Alert System",
+          "Real-Time Vehicle Speed Tracking & Alert System",
+          "Weather Forecast Display System",
+          "IoT-based Smart Library System",
+          "Hospital Room Automation & Monitoring",
+          "IoT-based Bus/Train Schedule Display System",
+          "Smart Fertilizer Sprayer for Farms",
+          "Road Quality Monitoring using Accelerometer",
+          "IoT Emergency Response Button (Wearable)",
+          "Smart Helmet with Sensor Alerts",
+          "Wildlife Movement Tracker using GPS & IoT",
+          "Smart Ticketing System for Events",
+          "Real-Time Inventory Tracking System",
+          "IoT-based Health Station (Temp, SPO2, BPM)",
+          "Smart Classroom Management System",
+          "End-to-End Home Automation with App"
+        ],
       },
       "AI": {
-        "II B.Tech": [...Array(50).keys()].map(i => `AI Project ${i + 1} - II B.Tech`),
-        "III B.Tech": [...Array(50).keys()].map(i => `AI Project ${i + 1} - III B.Tech`),
+        "II B.Tech": [
+          "Rock-Paper-Scissors Game with AI",
+          "Spam Email Classifier",
+          "Handwritten Digit Recognition (MNIST)",
+          "AI Quiz Generator from PDF Notes",
+          "Simple Voice Assistant in Python",
+          "Fake News Detector",
+          "Movie Recommendation System",
+          "Personality Prediction from Social Media Posts",
+          "AI Tic-Tac-Toe Game",
+          "Color Detection App using OpenCV",
+          "Face Mask Detector",
+          "Language Translator (Basic Level)",
+          "Image to Sketch Converter using CV",
+          "Sentiment Analysis on Tweets",
+          "Resume Screening using NLP",
+          "Student Marks Predictor using Linear Regression",
+          "Music Genre Classifier",
+          "Dog vs Cat Image Classifier",
+          "Smart Calculator with AI Chatbot",
+          "College Department Bot using NLP",
+          "Gender and Age Detection from Image",
+          "AI Chatbot for FAQs",
+          "Text Summarizer using NLP",
+          "Virtual Mouse using Hand Gestures",
+          "BMI Predictor using Dataset",
+          "Loan Approval Prediction System",
+          "Stock Trend Prediction (Visual, not real trading)",
+          "Chat Emotion Detector from Text",
+          "Student Attendance Classifier",
+          "Crop Suggestion System",
+          "Disease Classifier from Symptoms (Basic)",
+          "Mood Detection from Voice",
+          "Currency Detection System",
+          "Brain Tumor Detection (Dummy Dataset)",
+          "Job Role Predictor from Resume Keywords",
+          "Alarm Clock with Voice Commands",
+          "Finger Counting System using OpenCV",
+          "Object Distance Estimator from Image",
+          "English Essay Scorer using NLP",
+          "AI Typing Assistant",
+          "Tourist Spot Recommender",
+          "Image Background Remover",
+          "Car Price Predictor",
+          "Student Dropout Predictor",
+          "Eye Blink Counter",
+          "Weather Prediction Model",
+          "Hand Gesture Recognition",
+          "Real-Time Object Labeler",
+          "Voice Gender Recognition",
+          "Real vs AI-generated Face Classifier"
+        ],
+        "III B.Tech": [
+          "Real-Time Face Recognition Attendance System",
+          "Automatic Number Plate Recognition (ANPR)",
+          "Human Activity Recognition using Smartphone Sensors",
+          "Diabetic Retinopathy Detection from Retinal Images",
+          "Chatbot with Contextual Memory (Deep Learning)",
+          "AI Virtual Career Counselor (NLP + Recommendation)",
+          "Pneumonia Detection from Chest X-Rays",
+          "AI-based Resume Analyzer with Candidate Ranking",
+          "Real-Time Mask & Temperature Screening Kiosk",
+          "Speech Emotion Recognition",
+          "Loan Defaulter Risk Prediction",
+          "Brain MRI Segmentation using Deep Learning",
+          "Multilingual Speech-to-Text AI",
+          "Real-Time Intruder Detection in CCTV Footage",
+          "Social Media Toxic Comment Classifier",
+          "Smart Farming Advisor using AI and Satellite Data",
+          "Credit Card Fraud Detection",
+          "AI Virtual Teaching Assistant",
+          "Face Swapping and Deepfake Detector",
+          "Product Price Prediction for E-commerce",
+          "Mental Health Support Bot using GPT/NLP",
+          "Sign Language Detection System",
+          "Stock Price Predictor using LSTM",
+          "AI Resume Builder with Feedback System",
+          "Real-Time Road Lane Detection for Smart Cars",
+          "AI-Powered Personal Finance Tracker",
+          "Fake Product Review Detector",
+          "Gesture Controlled Virtual Mouse",
+          "News Article Classifier (Politics, Sports, Tech)",
+          "Plagiarism Checker using AI",
+          "Crop Disease Identifier from Leaf Images",
+          "Pathology Report Analyzer (Text to Insights)",
+          "Live Video Object Detection System",
+          "Earthquake Prediction (Data + Geo AI)",
+          "AI Doctor – Symptom Checker with Recommendation",
+          "Personalized Study Planner using AI",
+          "Exam Cheating Detection using Webcam Feed",
+          "Virtual Dressing Room using OpenCV",
+          "AI Chatbot for Legal Advice (Basic Q&A)",
+          "Forest Fire Prediction System",
+          "Voice-controlled Home Automation with AI",
+          "Resume Job Matcher using Cosine Similarity",
+          "YouTube Comment Sentiment Dashboard",
+          "Traffic Sign Classifier for Self-driving Cars",
+          "Personality Test Bot (OCEAN Model)",
+          "Indian Sign Language to Speech Converter",
+          "E-learning Video Recommendation System",
+          "Medical Report Summarizer using NLP",
+          "Hate Speech Detection in Regional Languages",
+          "Human Pose Estimation for Fitness Feedback"
+        ],
       },
       "Full Stack": {
-        "II B.Tech": [...Array(50).keys()].map(i => `Full Stack Project ${i + 1} - II B.Tech`),
-        "III B.Tech": [...Array(50).keys()].map(i => `Full Stack Project ${i + 1} - III B.Tech`),
+        "II B.Tech": [
+          "Student Task Manager (To-do List)",
+          "Personal Portfolio Website with Admin Panel",
+          "Online Quiz App",
+          "Digital Diary (Private Notes App)",
+          "Student Feedback Collection Portal",
+          "College Event Registration Portal",
+          "Online Voting System for Clubs",
+          "Hostel Complaint Management System",
+          "Tech Club Website with Member Profiles",
+          "College Canteen Menu Viewer",
+          "Placement Preparation Tracker",
+          "Simple Blog App (Create, Edit, Delete Posts)",
+          "Notes Sharing Platform (HTML, CSS, PHP, MySQL)",
+          "Mini E-Commerce Store (Static Products)",
+          "College Notices Board with Image Upload",
+          "Class Timetable Scheduler",
+          "Simple Chat Room using WebSockets",
+          "Student Birthday Reminder App",
+          "College Bus Route Tracker (Static Maps)",
+          "Online Resume Builder",
+          "Student Resource Hub (Docs & PDFs Upload)",
+          "Book Review System",
+          "Subject-Wise Study Material Organizer",
+          "Class Attendance Management System",
+          "Contact Manager Web App",
+          "Visitor Log Book for College Reception",
+          "Study Group Portal",
+          "Bookstore Inventory System (Admin Panel)",
+          "Online Calculator (Scientific/Basic)",
+          "Notes and To-Do Combo App",
+          "Alumni Registration Page",
+          "College Project Gallery",
+          "Hostel Room Booking Form",
+          "Study Time Tracker (Pomodoro Timer)",
+          "Student's Financial Budget Tracker",
+          "Workshop Registration + Certificate Generator",
+          "Campus Navigation Assistant (Building Map)",
+          "Admin Dashboard Template",
+          "Student Council Election Portal",
+          "Chatbot Integration in College Website",
+          "Internship Finder (Static Listings)",
+          "Motivational Quotes App",
+          "Notice Board for Class Announcements",
+          "Library Management (Basic Version)",
+          "Student Progress Dashboard (Graphs + Charts)",
+          "Online Food Ordering (Single Vendor)",
+          "Faculty Directory with Contact Info",
+          "Semester CGPA Calculator",
+          "Lost & Found Portal for Campus",
+          "Online Certificate Verifier (Basic QR scan system)"
+        ],
+        "III B.Tech": [
+          "Complete Student Management System (Admin + Student Panel)",
+          "Online Learning Portal with Video Upload & Quiz",
+          "College ERP System (Attendance, Assignments, Grades)",
+          "Internship & Job Portal for Students",
+          "Social Networking Platform for Campus",
+          "Online Examination System with Timer & Leaderboard",
+          "Event Management Platform with Booking & Payments",
+          "E-Commerce Platform with Cart, Auth, Payment Integration",
+          "Faculty Feedback & Evaluation Dashboard",
+          "Admin Dashboard for Resource Management",
+          "Career Guidance Portal with Resume Upload + Suggestions",
+          "News Blog CMS with Admin Roles",
+          "Multi-role Login System (Admin, Faculty, Student)",
+          "Smart Complaint Redressal System",
+          "Online Portfolio Builder with Templates",
+          "Placement Tracker Dashboard (Students & Admin)",
+          "College Event Photo Gallery with Upload & Likes",
+          "Study Material Hub with Upload/Download & Tags",
+          "Hostel Management System with Room Allocation",
+          "Scholarship Application Portal",
+          "Library Management System with Live Book Status",
+          "Resume Ranking System for Recruiters",
+          "Online Student Grievance Portal",
+          "Department Achievement Tracker",
+          "Virtual Classroom with Notes + Video + Chat",
+          "College Expense Tracking System for Admin",
+          "Group Project Collaboration Platform",
+          "Research Paper Repository for Students",
+          "Event Ticket Booking + QR-based Entry",
+          "Learning Resource Recommendation System",
+          "Interactive College Map with Navigation (using Maps API)",
+          "Time Table Management System with Notifications",
+          "Campus Blood Donation Network",
+          "E-Magazine CMS for Department",
+          "College Hackathon Registration & Judging Portal",
+          "User Analytics Dashboard for Web App",
+          "Online Hostel Fee Payment System",
+          "Profile-Based Internship Matching System",
+          "Resume Parser & Keyword Extractor",
+          "Mental Wellness Portal for Students",
+          "Student Peer Review Portal (For Projects/Assignments)",
+          "Admin Panel for Event Certificate Distribution",
+          "Progressive Web App (PWA) for Campus Events",
+          "Online Certification Generator with Admin Panel",
+          "Budget Management System for Student Clubs",
+          "Smart Timetable Suggestion App",
+          "Departmental Notice Automation System",
+          "Full Stack Attendance System with QR Code",
+          "Complaint Escalation Tracking Portal",
+          "Online Conference Management Platform (CFP, Review, Register)"
+        ],
       },
       "Blockchain": {
-        "II B.Tech": [...Array(50).keys()].map(i => `Blockchain Project ${i + 1} - II B.Tech`),
-        "III B.Tech": [...Array(50).keys()].map(i => `Blockchain Project ${i + 1} - III B.Tech`),
+        "II B.Tech": [
+          "Blockchain-based Digital Certificate Generator (UI only)",
+          "Simple Blockchain Ledger Visualizer",
+          "Voting System Simulation using Smart Contract UI",
+          "Basic Token Creation on Ethereum Testnet",
+          "Blockchain-based Event Ticket Verification",
+          "Fake News Verifier using Blockchain Concept",
+          "Document Timestamping Simulator",
+          "Student Identity Card Simulation with Blockchain Concept",
+          "Blockchain-based Attendance Ledger (Frontend only)",
+          "Donation Tracker with Blockchain Simulation",
+          "QR Code-based Certificate Validator",
+          "College Notes Notarization App",
+          "Blockchain-based Academic Record Viewer (UI Prototype)",
+          "Mini Coin Flip Game using Solidity",
+          "Blockchain-Based Chat App (Simple UI simulation)",
+          "Resume Verification using Blockchain Concept",
+          "Simple Blockchain Explorer (Frontend + Sample Blocks)",
+          "College ID Verification App (Simulated with JSON Ledger)",
+          "Blockchain-based Complaint Register (Frontend only)",
+          "Transcript Hashing Demo using Solidity",
+          "Land Registry Simulation using Smart Contract Template",
+          "Blockchain-based Alumni Database UI",
+          "Blockchain-powered File Hash Validator",
+          "Crypto Reward System UI (for attendance or points)",
+          "Multi-sig Wallet Demo with Basic Smart Contract",
+          "Blockchain Portfolio Tracker (Mock Tokens)",
+          "Food Product Origin Verifier (Frontend + Concept only)",
+          "College Asset Tracking using Blockchain Concept",
+          "Smart Contract-based Library Due Tracker",
+          "Blockchain-based Job Offer Letter Verifier",
+          "NFT Minting Simulation App",
+          "Blockchain Loyalty Points System",
+          "Fee Payment Record Simulation on Blockchain",
+          "Blockchain-Based Club Membership Viewer",
+          "Voting DApp UI Mock for Cultural Events",
+          "Blockchain Password Manager (Conceptual Frontend)",
+          "Blockchain Course Completion Badge Simulator",
+          "E-Book Ownership Ledger Simulator",
+          "Internship Offer Record System",
+          "Semester Result Timestamping Demo",
+          "Student Resume Chain of Trust UI",
+          "Simple Hashing Visualizer for Blocks",
+          "Wallet UI Mock with Dummy Coins",
+          "Blockchain-based Lost & Found Item Tracker",
+          "Blockchain Study Group Collaboration App (UI-only)",
+          "Time-locked Message Sender UI",
+          "Student Scholarship Ledger Simulation",
+          "Grade Transparency Demo on Blockchain",
+          "Digital Signature Checker (Hash Comparison)",
+          "Project Submission Tracker using Blockchain Concept"
+        ],
+        "III B.Tech": [
+          "Blockchain-based Academic Certificate Verification DApp",
+          "Decentralized Voting System for College Elections",
+          "NFT Marketplace for Digital Art (Frontend + Smart Contracts)",
+          "Blockchain-based Degree Issuance and Validation System",
+          "Supply Chain Tracker for Agricultural Products",
+          "Blockchain-based Medical Record Management",
+          "Crypto Rewards App for Student Achievements",
+          "Decentralized E-Learning Certificate Generator",
+          "Land Ownership Record on Blockchain",
+          "Multi-sig Wallet Implementation for Team Projects",
+          "Blockchain-based Research Paper Submission Platform",
+          "Peer-to-Peer Lending DApp",
+          "College Fund Allocation Tracker using Blockchain",
+          "Decentralized Job Portal with Resume Validation",
+          "Real Estate Registry using Ethereum Smart Contracts",
+          "Blockchain Ticketing System with QR Scan Validator",
+          "University Transcript Issuance on Blockchain",
+          "Blockchain-based Internship Completion Tracker",
+          "Transparent College Elections with Smart Contracts",
+          "Attendance Tracking using Ethereum Ledger",
+          "Decentralized Crowdfunding Platform",
+          "Smart Contract for Hostel Room Booking",
+          "Certificate Revocation System using Blockchain",
+          "Carbon Credit Tracker for Environmental Projects",
+          "Web3 Social Media Platform for Students",
+          "Blockchain-based Publishing Platform for Student Journals",
+          "Decentralized Scholarship Distribution System",
+          "Blockchain-based Copyright Claim Verifier",
+          "Crypto Token for Internal Campus Economy",
+          "Alumni Donation Tracker with Smart Contract",
+          "Online Library Lending System with Blockchain Ledger",
+          "IPFS-based Document Storage DApp",
+          "Blockchain-Based Voting System with zk-SNARKs (Privacy Preserved)",
+          "Blockchain-Based Startup Share Distribution",
+          "Decentralized Peer Review System for Projects",
+          "Blockchain-Based College Feedback System",
+          "Real-Time Crypto Payment Gateway for Campus Store",
+          "Blockchain Voting for Hackathon Results",
+          "Ethereum Smart Contract Playground for Students",
+          "Secure IoT Device Authentication using Blockchain",
+          "Blockchain-Based Warranty Management System",
+          "Certificate Generator using Truffle + IPFS + Metamask",
+          "Blockchain Timestamping for Code Commits",
+          "Freelance Platform with Escrow Smart Contracts",
+          "Blockchain-Based Charity Donation Platform",
+          "NFT Event Badges for College Fests",
+          "Land Tokenization and Trading Simulation",
+          "Blockchain Voting System with React & Solidity",
+          "Blockchain-Based Grade Publishing System",
+          "Student Loan Application DApp with Approval Logic"
+        ],
       },
       "Cloud Solutions": {
-        "II B.Tech": [...Array(50).keys()].map(i => `Cloud Project ${i + 1} - II B.Tech`),
-        "III B.Tech": [...Array(50).keys()].map(i => `Cloud Project ${i + 1} - III B.Tech`),
+        "II B.Tech": [
+          "Personal Notes App hosted on Firebase",
+          "Real-Time Chat App using Firebase Realtime DB",
+          "Online Portfolio Website hosted on GitHub Pages",
+          "File Upload & Download System using AWS S3",
+          "To-do List App with Cloud Firestore",
+          "Cloud-Based CGPA Calculator",
+          "College Event Website hosted on Vercel/Netlify",
+          "Resume Builder with PDF Export on Cloud",
+          "Feedback Collector with Google Sheets Backend",
+          "Weather App using a Cloud-based Weather API",
+          "Student Profile Manager using MongoDB Atlas",
+          "Quiz App with Cloud-hosted Database",
+          "Contact Form with Google Sheets as Backend",
+          "Alarm/Reminder App with Firebase Authentication",
+          "Blog Website hosted on Heroku",
+          "College News Update App hosted on Render",
+          "Image Gallery using Firebase Storage",
+          "Chat Room with Google Authentication",
+          "College Announcement Page with Realtime Updates",
+          "Book Recommendation App with Cloud Database",
+          "Web App Deployment using Docker on AWS EC2",
+          "Online Voting System Hosted on Firebase",
+          "Basic LMS using Firebase Auth and Storage",
+          "College Photo Album with Cloud CDN Delivery",
+          "URL Shortener hosted on Vercel",
+          "Hostel Booking System using Firebase Realtime DB",
+          "Markdown Note Editor with Cloud Sync",
+          "Budget Tracker App hosted on Heroku",
+          "File Conversion Tool (e.g., docx to pdf) using Cloud Functions",
+          "Expense Splitter App (Like Splitwise) on Google Cloud",
+          "Certificate Generator with Storage on Firebase",
+          "College Club Blog with CMS-like UI",
+          "Student Study Time Tracker with Cloud Sync",
+          "Event Countdown Timer App (Hosted)",
+          "Student Polls App using Firebase Firestore",
+          "Contactless Attendance App with Cloud DB",
+          "Campus Map Viewer with Cloud Backend",
+          "QR Code Generator with Cloud Storage",
+          "College Magazine Web App hosted on Netlify",
+          "Semester Subject Notes Archive (Cloud Storage)",
+          "Online Document Sharing Portal",
+          "Time Table Viewer with Dynamic Cloud Updates",
+          "Department Calendar App hosted on Render",
+          "Resume Upload Portal with Google Drive API",
+          "Feedback Form with Email Trigger via Cloud Function",
+          "Admin Login System using Firebase Auth",
+          "Interview Preparation Portal hosted on GitHub Pages",
+          "Cloud Calculator App (Backend Hosted)",
+          "Book Review & Ratings Web App",
+          "Basic Helpdesk System (Submit & Track Queries)"
+        ],
+        "III B.Tech": [
+          "Scalable Learning Management System (LMS) on AWS",
+          "E-commerce Web App with CI/CD Pipeline using GitHub Actions",
+          "Cloud-Based Real-Time Chat App with Socket.IO & Redis",
+          "File Sharing System with Expiry Links on GCP",
+          "Smart Attendance App with Face Recognition & Cloud Storage",
+          "Health Record System with Serverless Functions",
+          "Online Voting App using Firebase Auth & Realtime DB",
+          "Resume Parser + Storage using AWS Lambda + S3",
+          "Smart Complaint Portal using Cloud Firestore",
+          "Secure Video Conferencing App with Cloud Recording",
+          "Microservices-Based Inventory System",
+          "Real-Time Dashboard with Streamlit + Cloud Hosting",
+          "Food Delivery App with Cloud Functions for Notifications",
+          "Role-Based Admin Dashboard hosted on Azure",
+          "IoT Data Visualization Platform hosted on GCP",
+          "Multi-User Blogging Platform with Admin CMS (Hosted)",
+          "Certificate Verification System using Cloud Functions + DB",
+          "Auto-Scalable College Event Management Portal (AWS/GCP)",
+          "Personal Finance Tracker with Google Cloud Datastore",
+          "PDF Annotator Tool with Cloud Sync",
+          "Resume Ranking API + Web Interface",
+          "Data Backup Portal for Students using Cloud Storage",
+          "Hostel Room Allocation System with Admin Control",
+          "Online Quiz App with Timer, Leaderboard, and Cloud Sync",
+          "Role-Based LMS with Multi-Tier Auth System",
+          "Event Photo Gallery App with Cloud CDN",
+          "Student Grievance Tracker with Notifications",
+          "RESTful API Hosting with Swagger Docs on Render/AWS",
+          "College Resource Booking System (Rooms/Labs)",
+          "Anonymous Feedback Platform hosted on Netlify",
+          "Course Review & Rating App with Cloud DB",
+          "Internship Application Portal with Resume Upload",
+          "Chatbot for College Info hosted on Cloud Function",
+          "File Management System with Cloud Drive Integration",
+          "Student Resource Marketplace (eBooks, Notes, etc.)",
+          "Real-Time Doubt Solving Forum hosted on Firebase",
+          "Dynamic Time Table Generator with Admin Control",
+          "Video Streaming Platform with Cloud Transcoding",
+          "Email Notification System using AWS SES",
+          "News Aggregator for Campus with Firebase Hosting",
+          "QR-based Certificate Distribution Platform",
+          "Multi-tenant Web App for College Departments",
+          "Student Portfolio CMS (React + MongoDB Atlas)",
+          "API Gateway + Lambda for Serverless Data Access",
+          "Admin Analytics Panel for Hosted Student Data",
+          "College Club Collaboration Platform",
+          "Feedback Analytics using BigQuery or AWS Athena",
+          "Event Ticketing Platform with QR + Email Integration",
+          "Online Survey System with Exportable Reports",
+          "Notes Scanner + Cloud Storage Sync (Mobile + Web)"
+        ],
       }
     };
 
-    const container = document.getElementById('projectsContainer');
+    let selectedYear = '';
+    let selectedDomain = '';
 
-    for (const domain in projectData) {
-      const domainSection = document.createElement('div');
-      domainSection.innerHTML = `
-        <h2 class="text-2xl font-semibold text-blue-600">${domain}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          ${Object.entries(projectData[domain]).map(([year, projects]) => `
-            <div class="bg-white p-4 rounded-xl shadow fade-in">
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">${year}</h3>
-              <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
-                ${projects.map(p => `<li>${p}</li>`).join('')}
-              </ul>
-            </div>
-          `).join('')}
+    function selectYear(year) {
+      selectedYear = year;
+      document.getElementById('yearSelection').classList.add('hidden');
+      document.getElementById('domainSelection').classList.remove('hidden');
+    }
+
+    function selectDomain(domain) {
+      selectedDomain = domain;
+      console.log('Selected Domain:', selectedDomain);
+      console.log('Selected Year:', selectedYear);
+      console.log('Available Projects:', projectData[domain][selectedYear]);
+      
+      document.getElementById('domainSelection').classList.add('hidden');
+      document.getElementById('projectsContainer').classList.remove('hidden');
+      
+      const container = document.getElementById('projectsContainer');
+      const projects = projectData[domain][selectedYear];
+      
+      container.innerHTML = `
+        <div class="flex items-center gap-4 mb-8">
+          <button onclick="goBackToDomainSelection()" class="back-button">
+            ← Back
+          </button>
+          <h2 class="text-3xl font-bold text-white section-title">${domain} - ${selectedYear}</h2>
+        </div>
+        <div class="card p-8 rounded-xl fade-in">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold text-white">${selectedYear}</h3>
+          </div>
+          <ul class="space-y-2">
+            ${projects.map((p, index) => `
+              <li class="project-item text-gray-300 hover:text-white">
+                <span class="text-blue-400 mr-2">${index + 1}.</span>${p}
+              </li>
+            `).join('')}
+          </ul>
         </div>
       `;
-      container.appendChild(domainSection);
+    }
+
+    function goBackToYearSelection() {
+      document.getElementById('domainSelection').classList.add('hidden');
+      document.getElementById('yearSelection').classList.remove('hidden');
+      selectedYear = '';
+      selectedDomain = '';
+    }
+
+    function goBackToDomainSelection() {
+      document.getElementById('projectsContainer').classList.add('hidden');
+      document.getElementById('domainSelection').classList.remove('hidden');
+      selectedDomain = '';
     }
   </script>
 </body>
