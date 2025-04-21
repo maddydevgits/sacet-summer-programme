@@ -1274,7 +1274,22 @@
         document.querySelectorAll('.project-item').forEach(item => {
           item.addEventListener('click', (e) => {
             if (!e.target.closest('.favorite-btn') && !e.target.closest('.copy-btn')) {
-              showProjectDetails(item.dataset.project);
+              // Check if it's mobile view (screen width <= 768px)
+              if (window.innerWidth <= 768) {
+                showProjectDetails(item.dataset.project);
+              } else {
+                // For desktop, keep the double-click behavior
+                let clickCount = 0;
+                const clickTimer = setTimeout(() => {
+                  clickCount = 0;
+                }, 300);
+                
+                clickCount++;
+                if (clickCount === 2) {
+                  clearTimeout(clickTimer);
+                  showProjectDetails(item.dataset.project);
+                }
+              }
             }
           });
         });
